@@ -18,5 +18,5 @@ docker-login:
 docker-build:
 	docker build -t $(IMG):$(APP_VERSION) .
 
-docker-push: docker-build
+docker-push: docker-login docker-build
 	docker push $(IMG):$(APP_VERSION)
